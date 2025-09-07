@@ -308,7 +308,8 @@ class ChessAI:
 class PieceImageLoader:
 
     def __init__(self, pieces_folder: str = "Pieces"):
-        self.pieces_folder = pieces_folder
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        self.pieces_folder = os.path.join(script_dir, pieces_folder)
 
     def load_piece_images(self, size: int = TILE_SIZE) -> Dict[str, ImageTk.PhotoImage]:
 
